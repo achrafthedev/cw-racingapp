@@ -1,6 +1,7 @@
 // Utilities
 import { defineStore } from 'pinia'
 import { ActiveHudData, ActiveRace, BaseData, Bounty, Buttons, CreatorData, Crew, Track, Notification, Head2headData, Race} from './types'
+import type { AutoRaceNotification } from './types'
 
 export const useGlobalStore = defineStore('global', {
   state: () => ({
@@ -25,6 +26,9 @@ export const useGlobalStore = defineStore('global', {
     notification: undefined as Notification | undefined,
     bounties: [] as Bounty[],
     showCryptoModal: false,
-    head2headData: {} as Head2headData
+    head2headData: {} as Head2headData,
+    autoRaceNotification: null as AutoRaceNotification | null,
+    showRaceSelectionMenu: false,
+    availableAutoRaces: [] as AutoRaceNotification[]
   })
 })

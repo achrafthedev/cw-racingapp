@@ -70,6 +70,16 @@ const handleHead2HeadUpdate = (data: any) => {
   globalStore.head2headData = data
 }
 
+const handleAutoRaceNotification = (data: any) => {
+  globalStore.autoRaceNotification = data
+}
+
+const handleRaceSelectionMenu = (data: any) => {
+  globalStore.showRaceSelectionMenu = data.show
+  if (data.races) {
+    globalStore.availableAutoRaces = data.races
+  }
+}
 const handleMessageListener = (event: MessageEvent) => {
   const itemData: any = event?.data;
   if (itemData?.type) {
@@ -94,6 +104,13 @@ const handleMessageListener = (event: MessageEvent) => {
         break;
       case 'head2head':
         handleHead2HeadUpdate(itemData.data)
+        break;
+      case 'autoRaceNotification':
+        handleAutoRaceNotification(itemData.data)
+        break;
+      case 'raceSelectionMenu':
+        handleRaceSelectionMenu(itemData.data)
+        break;
       default:
         break;
     }

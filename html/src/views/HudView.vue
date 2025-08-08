@@ -3,6 +3,8 @@
     <EditorHud v-if="globalStore.creatorData && globalStore.activeHudData.InCreator"></EditorHud>
     <RaceHud v-if="globalStore.activeRace && globalStore.activeHudData.InRace"></RaceHud>
     <CountdownHud v-if="globalStore.countdown > -1" :countdownNumber="globalStore.countdown"></CountdownHud>
+    <AutoRaceNotification></AutoRaceNotification>
+    <RaceSelectionMenu></RaceSelectionMenu>
   </v-container>
 </template>
 
@@ -11,6 +13,8 @@ import { useGlobalStore } from "../store/global";
 import EditorHud from "../components/hud/EditorHud.vue";
 import RaceHud from "../components/hud/RaceHud.vue";
 import CountdownHud from "../components/hud/CountdownHud.vue";
+import AutoRaceNotification from "../components/hud/AutoRaceNotification.vue";
+import RaceSelectionMenu from "../components/hud/RaceSelectionMenu.vue";
 
 const globalStore = useGlobalStore();
 

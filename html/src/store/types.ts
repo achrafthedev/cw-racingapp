@@ -367,3 +367,17 @@ export type Head2headData = {
   invitee: string | undefined;
   current: Head2HeadCurrent;
 };
+
+export type AutoRaceNotification = {
+  raceId: string;
+  trackName: string;
+  trackId: string;
+  laps: number;
+  buyIn: number;
+  maxClass?: string;
+  ranked: boolean;
+  automated: boolean;
+  hostName: string;
+  racers: number;
+  expirationTime: number;
+};
